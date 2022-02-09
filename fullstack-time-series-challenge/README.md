@@ -46,5 +46,3 @@ What we're looking for:
 * Relevant tests for your code
 * Scratch features when necessary, time is short!
 * Document your approach, your decisions, and your general notes
-
-# TODO:
