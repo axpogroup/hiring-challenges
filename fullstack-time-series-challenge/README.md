@@ -27,7 +27,7 @@ discussion for your next interview.
 Use the data dumps and the tools of your choice to create an HTML report that shows the following:
 
 * Selection(s) for Assets and Signals
-* Time series visualization of selected time serie(s) with the possibility to zoom and to add and remove different
+* Time series visualization of selected time serie(s) with the possibility to zoom, to add and remove different
   signals
 * Option to export the visualized data
 
@@ -46,3 +46,10 @@ What we're looking for:
 * Relevant tests for your code
 * Scratch features when necessary, time is short!
 * Document your approach, your decisions, and your general notes
+
+## Preparations for interview
+
+* open your IDE
+* have a running version of your app ready
+* prepare to present your approach for 5-10 min (no slides!)
+* be prepared to answer a few questions after your presentation
