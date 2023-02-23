@@ -1,3 +1,6 @@
+.idea
+.vscode
+
 ### VisualStudioCode template
 .vscode/*
 !.vscode/settings.json
