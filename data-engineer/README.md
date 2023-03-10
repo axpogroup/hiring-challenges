@@ -66,11 +66,11 @@ draft. Don't lose time over-engineering or over-designing it.
 May the following questions help you:
 
 * How would your favorite architecture look like?
+* What technologies and services would you use?
 * How would you deploy the required infrastructure?
 * How would you monitor your data pipelines?
 * How would you monitor and improve data quality?
 * How would you communicate with customers consuming the data?
-* What would you do ?? MAX
 * ...
 
 ### Evaluation criteria
