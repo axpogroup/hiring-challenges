@@ -2,36 +2,37 @@
 
 ## Intro
 
-
 At regular recurring intervals, engineers at Axpo inspects their assets (power plants, substations, etc.) with drones to detect possible defects.
 
 In the forefront of a flight, they must check whether drone restrictions apply to the area around the asset. Moreover, the population density at the location must be found out, as this affects the beyond visual line of sight drone operation.
 
 To do that, we decided to engage you to develop a tool that will provide this information in an easy-to-use web application to the engineer.
 
-**Please invest no more than 5 to 8 hours.**
-If you cannot complete the task in this time frame, document where you got stuck, so we can use this as a basis for
-discussion for your next interview.
+**Please invest no more than 5 to 8 hours.** If you cannot complete the task in this time frame, document where you got stuck, so we can use this as a basis for discussion for your next interview.
+
+**Please hand in your code 24 hours before the interview.**
 
 ## Your mission, should you choose to accept it:
 
 ### Initial position
 
-* Data dump of assets with description and geocoordinates (located in this repo)
-* Public API endpoints which return drone restriction and population density, respectively, for a given geocoordinate.
-  * Population Density: ```GET https://api3.geo.admin.ch/rest/services/api/MapServer/identify?layers=all:ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner&geometryType=esriGeometryPoint&sr=4326&lang=en&returnGeometry=false&tolerance=0&geometry={"x": <longitude>, "y": <latitude>}```
-  * Drone Restriction: ```GET https://api3.geo.admin.ch/rest/services/api/MapServer/identify?layers=all:ch.bazl.einschraenkungen-drohnen&geometryType=esriGeometryPoint&sr=4326&lang=en&returnGeometry=false&tolerance=0&geometry={"x": <longitude>,"y": <latitude>}```
+- Data dump of assets with description and geocoordinates (located in this repo)
+- Public API endpoints which return drone restriction and population density, respectively, for a given geocoordinate.
+  - Population Density: `GET https://api3.geo.admin.ch/rest/services/api/MapServer/identify?layers=all:ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner&geometryType=esriGeometryPoint&sr=4326&lang=en&returnGeometry=false&tolerance=0&geometry={"x": <longitude>, "y": <latitude>}`
+  - Drone Restriction: `GET https://api3.geo.admin.ch/rest/services/api/MapServer/identify?layers=all:ch.bazl.einschraenkungen-drohnen&geometryType=esriGeometryPoint&sr=4326&lang=en&returnGeometry=false&tolerance=0&geometry={"x": <longitude>,"y": <latitude>}`
 
 <details>
   <summary>Example request</summary>
-  
-  ### Request
-  ```
- GET https://api3.geo.admin.ch/rest/services/api/MapServer/identify?layers=all:ch.bazl.einschraenkungen-drohnen&geometryType=esriGeometryPoint&sr=4326&lang=en&returnGeometry=false&tolerance=0&geometry={"x": 8.56383,"y": 47.45539}
-  ```
-  
-  ### Response
-  ```
+
+### Request
+
+```
+GET https://api3.geo.admin.ch/rest/services/api/MapServer/identify?layers=all:ch.bazl.einschraenkungen-drohnen&geometryType=esriGeometryPoint&sr=4326&lang=en&returnGeometry=false&tolerance=0&geometry={"x": 8.56383,"y": 47.45539}
+```
+
+### Response
+
+```
 {
 	"results": [{
 		"layerBodId": "ch.bazl.einschraenkungen-drohnen",
@@ -179,30 +180,31 @@ discussion for your next interview.
 		}
 	}]
 }
-   ```
+```
+
 </details>
 
 ### Your part
 
 Using JavaScript or TypeScript and a framework/library of your choice, create a web application with the following features:
 
-* On the start page, the user selects whether they want to retrieve information about drone restrictions or population density.
-* In the next step, the user selects an asset from the provided data dump.
-* Finally, the application does the API requests and shows the result to the user.
+- On the start page, the user selects whether they want to retrieve information about drone restrictions or population density.
+- In the next step, the user selects an asset from the provided data dump.
+- Finally, the application does the API requests and shows the result to the user.
 
 ## Evaluation criteria
 
 What we're looking for:
 
-* Clean project setup
-* Appealing UI
-* Relevant tests for your code
-* Scratch features when necessary, time is short!
-* Document your approach, your decisions, and your general notes
+- Clean project setup
+- Appealing UI
+- Relevant tests for your code
+- Scratch features when necessary, time is short!
+- Document your approach, your decisions, and your general notes
 
 ## Preparations for interview
 
-* open your IDE
-* have a running version of your app ready
-* prepare to present your approach for 5-10 min (no slides!)
-* be prepared to answer a few questions after your presentation
+- open your IDE
+- have a running version of your app ready
+- prepare to present your approach for 5-10 min (no slides!)
+- be prepared to answer a few questions after your presentation
