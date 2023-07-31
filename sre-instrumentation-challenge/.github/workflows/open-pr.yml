@@ -1,0 +1,43 @@
+name: "Open PR to main branch"
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test_build:
+    runs-on: ubuntu-latest
+    name: test code and build image
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.8' 
+      
+      - name: Install dependencies
+        run: |-
+          cd src && pip3 install -e .
+        shell: bash
+      
+      - name: Run tests
+        run: |-
+          echo "Running tests"
+          cd src && pytest storage/test.py
+        shell: bash
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v32.1.2
+
+      - name: Docker build if Dockerfile has changed
+        if: contains(steps.changed-files.outputs.modified_files, 'Dockerfile')
+        run: |-
+          docker build .
+        shell: bash
+

@@ -9,7 +9,7 @@ setup(
     url="https://github.com/axpogroup/hiring-challenges",
     packages=find_packages("storage"),
     package_dir={"": "storage"},
-    install_requires=["flask>=2.0.2", "waitress>=2.0.0"],
+    install_requires=["flask>=2.0.2", "waitress>=2.0.0", "prometheus_client>=0.11.0"],
     extras_require={
         "dev": [
             "hupper>=1.10.3",
