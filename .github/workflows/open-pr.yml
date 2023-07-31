@@ -4,6 +4,8 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - 'sre-instrumentation-challenge/**'
 
 jobs:
   test_build:
@@ -22,22 +24,23 @@ jobs:
       
       - name: Install dependencies
         run: |-
-          cd src && pip3 install -e .
+          cd sre-instrumentation-challenge/src && pip3 install -e .
         shell: bash
       
       - name: Run tests
         run: |-
           echo "Running tests"
-          cd src && pytest storage/test.py
+          cd sre-instrumentation-challenge/src && pytest storage/test.py
         shell: bash
 
       - name: Get changed files
         id: changed-files
         uses: tj-actions/changed-files@v32.1.2
 
-      - name: Docker build if Dockerfile has changed
+      - name: Docker build and push if Dockerfile has changed
         if: contains(steps.changed-files.outputs.modified_files, 'Dockerfile')
         run: |-
-          docker build .
+          docker build sre-instrumentation-challenge -t rgsopedraultimate/sre-instrumentation-challenge:latest
+          docker push rgsopedraultimate/sre-instrumentation-challenge:latest
         shell: bash
 
