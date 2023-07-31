@@ -26,4 +26,10 @@ services:
       - ./deploy/grafana/provisioning/:/etc/grafana/provisioning/
     depends_on:
       - prometheus
+  
+  storage_api:
+    build: .
+    image: storage_api
+    ports:
+      - "5000:5000"
 

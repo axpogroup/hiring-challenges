@@ -7,3 +7,4 @@ scrape_configs:
     scrape_interval: 10s
     static_configs:
       - targets: ["storage_api:5000"]
+    metrics_path: /api/metrics
