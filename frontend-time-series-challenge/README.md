@@ -2,7 +2,7 @@
 
 ## Intro
 
-Axpo's Grid Division is integrating IoT data to their internal data platform. Our goal is to analyze different time
+Axpo is integrating IoT data to their internal data platform. Our goal is to analyze different time
 series which represent various signals of different assets
 (e.g. power of a transformer, voltage level of a power line etc.)
 
