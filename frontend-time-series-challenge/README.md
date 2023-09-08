@@ -1,7 +1,5 @@
 # Frontend Data Visualisation Challenge
 
-## Intro
-
 Welcome to the Frontend Challenge! 
 
 We hope you will enjoy the task and be able to show off some of your skills :)
