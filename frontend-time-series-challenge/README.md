@@ -1,55 +1,63 @@
-# Frontend Time Series Challenge
+# Frontend Data Visualisation Challenge
 
 ## Intro
 
-Axpo is integrating IoT data to their internal data platform. Our goal is to analyze different time
-series which represent various signals of different assets
-(e.g. power of a transformer, voltage level of a power line etc.)
+Welcome to the Frontend Challenge! 
 
-To do that, we decided to engage you to develop a tool that will help us visualize and analyze our time series.
+We hope you will enjoy the task and be able to show off some of your skills :)
 
-**Please invest no more than 5 to 8 hours.**
-If you cannot complete the task in this time frame, document where you got stuck, so we can use this as a basis for
-discussion for your next interview.
+Please invest **no more than 8 hours**, If you cannot complete the task in this time frame, document where you got stuck, so we can use this as a basis for discussion for your next interview.
 
-## Your mission, should you choose to accept it:
+Happy coding :)
 
-### Initial position
+## Task
 
-* Data dumps contained in this repository:
-  assets <-> signals <-> time series
-* Backend programming language is Python, but you are free to add whatever languages, packages and tools
-  you need to accomplish this challenge
+As a User i want to visualise data and be able to identify outliers.
 
+### Features
 
-### Step 1
+- Page Title
+    - tell the user what the page is about
+- Generate data
+    - Include a button that generates data
+        - for the last 100 days
+        - with values >= 0 and <= 100
+    - consecutive click removes old data and creates a new one, but does not reset threshold value
+    - data is not generated when user enters the page
+- Threshold
+    - include an input that takes value from >= 0 to <= 100
+    - defaults to 0
+    - include an apply button, to apply changes
+- Chart
+    - displays data as a line chart
+    - if no data, display an appropriate message 
+    - displays threshold as a horizontal line if the threshold value is > 0
+- Outliers
+    - include a table with the following columns:
+        - date in format: DD-MM-YYYY
+        - value
+        - error: value - threshold
+    - if no outliers, then include a positive message
+- (optional)
+    - if you have time and you want, you can include any other feature that is not listed above and present it during the interview
 
-Use the data dumps and the tools of your choice to create an HTML report that shows the following:
+### Requirements
 
-* Selection(s) for Assets and Signals
-* Time series visualization of selected time serie(s) with the possibility to zoom, to add and remove different
-  signals
-* Option to export the visualized data
+- use React and Create-React-App,
+- TypeScript
+- for styling only Styled-Components, you have to create components yourself
+- Chart library of your choosing
+- use Git and commit your changes as you do
+- you cannot use any library to handle Date, like MomentJS, etc.
+- do not write any test, and remove the ones that come with CRA
+- make sure your code is properly formatted / linted and doesn’t have any unused files / errors
+- make the page look good and be clear for the user on desktop screen size, no need for full responsiveness
+- colors, sizes, text messages are up to you
 
-### Step 2
+## Next steps
 
-* Create a Dockerfile that allows other developers to run the application. The idea behind this is that all we need to
-  verify the application is a Dockerfile and your assets. It is up to you whether you host the project directly from the
-  running Docker container or create a folder with the assets that can be used without a web server.
+Once you finish the task, please upload the code to your Github repository and share us the link.
 
-## Evaluation criteria
+If you have any questions about the task, feel free to contact us.
 
-What we're looking for:
-
-* Clean project setup
-* The ability to determine the actual problem area and find a suitable solution
-* Relevant tests for your code
-* Scratch features when necessary, time is short!
-* Document your approach, your decisions, and your general notes
-
-## Preparations for interview
-
-* open your IDE
-* have a running version of your app ready
-* prepare to present your approach for 5-10 min (no slides!)
-* be prepared to answer a few questions after your presentation
+During the next interview we will ask you to present the solution and tell us about challenges / shortcuts that you had to take.
