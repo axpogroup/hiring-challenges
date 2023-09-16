@@ -5,6 +5,11 @@ volumes:
   prometheus_data: {}
 
 services:
+  storage_api:
+    build: /src
+    ports:
+      - "5000:5000"
+
   prometheus:
     image: prom/prometheus:v2.33.0
     ports:
@@ -26,4 +31,3 @@ services:
       - ./deploy/grafana/provisioning/:/etc/grafana/provisioning/
     depends_on:
       - prometheus
-
