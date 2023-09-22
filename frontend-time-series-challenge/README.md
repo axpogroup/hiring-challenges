@@ -19,11 +19,11 @@ As a User i want to visualise data and be able to identify outliers.
 - Generate data
     - Include a button that generates data
         - for the last 100 days
-        - with values >= 0 and <= 100
+        - with values >= 0 and <= 100, integer values only
     - consecutive click removes old data and creates a new one, but does not reset threshold value
     - data is not generated when user enters the page
 - Threshold
-    - include an input that takes value from >= 0 to <= 100
+    - include an input that takes value from >= 0 to <= 100, integer values only
     - defaults to 0
     - include an apply button, to apply changes
 - Chart
@@ -31,10 +31,12 @@ As a User i want to visualise data and be able to identify outliers.
     - if no data, display an appropriate message 
     - displays threshold as a horizontal line if the threshold value is > 0
 - Outliers
+    - an Outlier is a value above the threshold
     - include a table with the following columns:
         - date in format: DD-MM-YYYY
         - value
-        - error: value - threshold
+        - error: value - threshold, i.e. 50 - 20 = 30
+    - the table should only include outliers
     - if no outliers, then include a positive message
 - (optional)
     - if you have time and you want, you can include any other feature that is not listed above and present it during the interview
