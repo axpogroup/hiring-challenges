@@ -43,7 +43,7 @@ Include some of your own thoughts like:
 * how can teams share data with each other?
 * how do you onboard new platform users?
 * who is responsible for what?
-* much more ...
+* much more ... what do you think is important?
 
 Please pitch task 1 in a non-technical way (max. 5 minutes).
 
