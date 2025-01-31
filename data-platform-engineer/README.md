@@ -61,7 +61,7 @@ Impress us with your ability to solve complex problems with pragmatic solutions 
 
 Pick a small part of your design (doesn't need to be related with task 2) and implement it in Terraform.
 ```terrafrom plan``` against a free Azure subscription is enough to show us your skills.
-The Terraform code must not be runnable, but it should be clear what you want to achieve 
+Not all parts of you code need to be runnable, but it should be clear what you want to achieve 
 and how you would structure your code.
 
 Get your hands dirty and show us your code (no slides, max. 5 minutes).
