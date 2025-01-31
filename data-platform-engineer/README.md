@@ -60,7 +60,7 @@ Impress us with your ability to solve complex problems with pragmatic solutions 
 ### Task 3: 👷 Implementation phase
 
 Pick a small part of your design (doesn't need to be related with task 2) and implement it in Terraform.
-The Terraform code musst not be runnable, but it should be clear what you want to achieve 
+The Terraform code must not be runnable, but it should be clear what you want to achieve 
 and how you would structure your code.
 
 Get your hands dirty and show us your code (no slides, max. 5 minutes).
