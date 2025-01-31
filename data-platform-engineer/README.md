@@ -41,7 +41,7 @@ In max. 5 slides, please draft a very high-level architecture of your data platf
 Include some of your own thoughts like:
 
 * how can teams share data with each other?
-* how do you onboard new platform users?
+* how can you ingest data from on-premises sources?
 * who is responsible for what?
 * much more ... what do you think is important?
 
@@ -60,6 +60,7 @@ Impress us with your ability to solve complex problems with pragmatic solutions 
 ### Task 3: 👷 Implementation phase
 
 Pick a small part of your design (doesn't need to be related with task 2) and implement it in Terraform.
+```terrafrom plan``` against a free Azure subscription is enough to show us your skills.
 The Terraform code must not be runnable, but it should be clear what you want to achieve 
 and how you would structure your code.
 
