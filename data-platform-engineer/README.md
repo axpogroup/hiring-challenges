@@ -41,7 +41,7 @@ In max. 5 slides, please draft a very high-level architecture of your data platf
 Include some of your own thoughts like:
 
 * how can teams share data with each other?
-* how do you onboard new platform users?
+* how can you ingest data from on-premises sources?
 * who is responsible for what?
 * much more ... what do you think is important?
 
