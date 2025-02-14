@@ -88,7 +88,6 @@ to help him to scale his solution.
 Take 3 Minutes to explain a couple of considerations you would take into account to scale the solution and how you would
 approach this problem.
 
-
 ## Submission Instructions
 
 Please submit your files as a zip archive at least 24h prior to the interview. 
