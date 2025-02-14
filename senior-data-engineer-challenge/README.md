@@ -1,1 +1,0 @@
-# Senior Data Engineer Challenge
