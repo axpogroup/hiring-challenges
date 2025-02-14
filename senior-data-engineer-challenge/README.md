@@ -12,7 +12,7 @@ as well as your data engineering, analysis, and communication skills.
 
 ## Initial position
 
-Imaging Mike, a trainee data engineer, who just finished his master's degree and now is eager  to learn more
+Imaging Mike, a trainee data engineer, who just finished his master's degree in Robotics and now is eager  to learn more
 about data engineering. Mike has been assigned to your team for the next 6 months to learn from you and your team.
 As a senior data engineer, you are responsible for mentoring Mike and ensuring that he learns the necessary skills.
 In your last sprint planning you identified the following task for Mike to work on in his first week: 
@@ -29,7 +29,8 @@ Below are the tasks you need to complete as part of this challenge:
 
 Your technical lead has assigned you the task to mentor Mike. Therefore, he asked you to prepare the onboarding
 for Mike. On the day before Mike starts, your technical lead asks you quickly about the onboarding plan for Mike and
-what you have in Mind. You had some time to think about it, but you haven't written anything down.
+what you have in Mind. You had some time to think about it, but you haven't written anything down. Consider also Mike's
+background in robotics, and that he is new to software / data engineering.
 
 In the first 5 minutes of the interview explain quickly what you have in mind for Mike's onboarding. Be creative, but
 do not over-engineer it. The technical lead (audience) will ask you questions about your plan. Notes are allowed,
@@ -42,15 +43,16 @@ provided. He even figured out how to use an API call to get the latest batch of 
 
 Now in a one-on-one with Mike, he tells you that he was reading about an MQTT broker provided by the data source owner.
 He understands that he somehow can use this to get real-time data. But he is not sure how to implement this in his
-pyspark pipeline. In you're absence the team created a new Jira ticket to implement this feature and assigned it to you
+pyspark pipeline. In your absence the team created a new Jira ticket to implement this feature and assigned it to you
 because they know you as a senior data engineer have experience with real-time data processing,
 and of course you know 😉!
 
 On one hand you have to deliver this feature by the end of the week, on the other hand you have to make sure that Mike
-and the rest of the team learns something. How do you handle this situation? After tomorrow's daily standup you have a
-booked now a meeting with the team to clarify the delegate situation and enable the team and specially Mike to solve 
-this issue without you taking over completely. You prepared a short presentation to unwind the situation in the team
-and to explain the basic concepts of real-time data processing.
+and the rest of the team learns something. How do you handle this situation?
+
+After tomorrow's daily standup, you have scheduled a meeting with the team to clarify the delegation situation and 
+to enable them, especially Mike, to resolve the issue without you having to take over completely. You prepared
+a short presentation to explain your role in the team and the basic concepts of real-time data processing.
 
 Take 10 minutes during the interview as if this would be the meeting with the team and present your plan. Expect
 some questions and counterarguments from the team (audience).
@@ -62,7 +64,13 @@ the whole repository without any backup. Everyone is in panic, and you're their 
 save the team from this embarrassing situation.
 
 Given the [challenge](https://github.com/axpogroup/hiring-challenges/tree/main/trainee-data-engineer-challenge) Mike was
-assigned to, it's now on you to implement the pipeline. Given the time constraints, ignore the real-time part for now.
+assigned to, it's now on you to implement the pipeline. Use the docker setup in this folder to simulate the MQTT signal:
+
+host: mqtt://localhost:1883
+topic: energy_flow_in_and_out_switzerland_electricity_per_second
+
+This topic randomly generates a values like in the csv-File but in a 1 second interval. Use this to simulate the
+real-time setup of your pipeline and mock other component data to fulfill the challenge given to Mike.
 
 It's due day, and you have to present the solution to the BI team who will take over the ownership of the
 pipeline after initial implementation.

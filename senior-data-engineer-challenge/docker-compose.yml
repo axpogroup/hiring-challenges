@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  mqtt_broker:
+    image: eclipse-mosquitto:2
+    volumes:
+      - ./config/:/mosquitto/config/:ro
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+
+  iot_data_generator:
+    build: ./iot_data_generator
+    environment:
+      - MQTT_HOST=mqtt_broker
+      - MQTT_PORT=1883
+      - MQTT_TOPIC=sensors
+      - INTERVAL_MS=1000
+      - LOGGING_LEVEL=20
+    depends_on:
+      - mqtt_broker
+
+
+volumes:
+  data: ~
