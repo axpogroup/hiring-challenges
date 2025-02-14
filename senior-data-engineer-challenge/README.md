@@ -79,6 +79,15 @@ architecture of your data platform, your ci/cd setup, and how they can monitor t
 Take 10 minutes to handover of the pipeline to the BI team (audience). Present your code as well as the outcome of the
 analysis to a technical audience.
 
+### 4. Mike is scaling
+
+After one year, Mike is progressing well and has implemented many real-time data pipelines gathering a lot of IoT data
+from all the sensors from various power plant of Axpo. His solution is getting slow and very costly. Mike is asking you
+to help him to scale his solution.
+
+Take 3 Minutes to explain a couple of considerations you would take into account to scale the solution and how you would
+approach this problem.
+
 
 ## Submission Instructions
 
