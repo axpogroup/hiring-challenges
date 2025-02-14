@@ -69,8 +69,8 @@ assigned to, it's now on you to implement the pipeline. Use the docker setup in 
 host: mqtt://localhost:1883
 topic: energy_flow_in_and_out_switzerland_electricity_per_second
 
-This topic randomly generates a values like in the csv-File but in a 1 second interval. Use this to simulate the
-real-time setup of your pipeline and mock other component data to fulfill the challenge given to Mike.
+This topic randomly generates values like in the csv-File but in a 1 second interval. Use this to simulate the
+real-time setup of your pipeline and mock other components and data to fulfill the challenge given to Mike.
 
 It's due day, and you have to present the solution to the BI team who will take over the ownership of the
 pipeline after initial implementation. The BI team is new to the setup, so consider also to explain a bit the
