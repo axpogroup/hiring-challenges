@@ -73,7 +73,8 @@ This topic randomly generates a values like in the csv-File but in a 1 second in
 real-time setup of your pipeline and mock other component data to fulfill the challenge given to Mike.
 
 It's due day, and you have to present the solution to the BI team who will take over the ownership of the
-pipeline after initial implementation.
+pipeline after initial implementation. The BI team is new to the setup, so consider also to explain a bit the
+architecture of your data platform, your ci/cd setup, and how they can monitor the pipeline.
 
 Take 10 minutes to handover of the pipeline to the BI team (audience). Present your code as well as the outcome of the
 analysis to a technical audience.
