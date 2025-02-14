@@ -27,7 +27,7 @@ Below are the tasks you need to complete as part of this challenge:
 
 ### 1. Mike's first day at work
 
-Your technical lead has assigned you the task to mentor Mike. Therefore he asked you to prepare the onboarding
+Your technical lead has assigned you the task to mentor Mike. Therefore, he asked you to prepare the onboarding
 for Mike. On the day before Mike starts, your technical lead asks you quickly about the onboarding plan for Mike and
 what you have in Mind. You had some time to think about it, but you haven't written anything down.
 
