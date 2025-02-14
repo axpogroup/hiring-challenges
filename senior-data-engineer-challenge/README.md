@@ -73,7 +73,7 @@ analysis to a technical audience.
 
 ## Submission Instructions
 
-Please submit your files as a zip archive at least 24h before the interview. 
+Please submit your files as a zip archive at least 24h prior to the interview. 
 
 ## Evaluation Criteria
 
