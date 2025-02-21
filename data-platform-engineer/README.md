@@ -45,24 +45,24 @@ Include some of your own thoughts like:
 * who is responsible for what?
 * much more ... what do you think is important?
 
-Please pitch task 1 in a non-technical way (max. 5 minutes).
-
+Be concise, you will present your solution in max. 5 minutes.
 
 ### Task 2: 🕵️‍♂️ It's all about the details
 
-Choose one topic / thought from Task 1 and go into more detail.
-What is your design idea in detail? How would you solve it? How does it scale?
-How does it influence other parts of the platform?
+In Axpo many data are directly arriving from IoT Sensors. 
+Could you design a solution to ingest data from IoT sensors into a data platform? Which tools would you use and why?
+What are the most important aspects to consider? 
 
-Impress us with your ability to solve complex problems with pragmatic solutions (max. 5 minutes).
+Hint: Considering the amount of data it would be great to have a solution that scales well!
 
+Highlight only technical details you think are relevant and present your solution in 5 min.
 
 ### Task 3: 👷 Implementation phase
 
-Pick a small part of your design (doesn't need to be related with task 2) and implement it in Terraform.
-```terrafrom plan``` against a free Azure subscription is enough to show us your skills.
-Not all parts of you code need to be runnable, but it should be clear what you want to achieve 
-and how you would structure your code.
+Pick a small part of your design from the first task and implement it in Terraform.
+```terraform plan``` against any free Azure subscription is enough to show us your skills.
+Not all parts of your code need to be runnable, but it should be clear what you want to achieve 
+and how you would structure your terraform code.
 
 Get your hands dirty and show us your code (no slides, max. 5 minutes).
 
