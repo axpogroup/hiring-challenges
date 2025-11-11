@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong Game</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PONG</h1>
+        <div class="score-board">
+            <div class="score">
+                <span>Player</span>
+                <span id="player-score">0</span>
+            </div>
+            <div class="score">
+                <span>Computer</span>
+                <span id="computer-score">0</span>
+            </div>
+        </div>
+        <canvas id="pong-canvas" width="800" height="600"></canvas>
+        <div class="controls">
+            <p><strong>Controls:</strong> Use <kbd>W</kbd> and <kbd>S</kbd> keys to move your paddle up and down</p>
+            <button id="start-btn">Start Game</button>
+            <button id="reset-btn">Reset</button>
+        </div>
+        <div id="game-message"></div>
+    </div>
+    <script src="/static/game.js"></script>
+</body>
+</html>
