@@ -30,7 +30,7 @@ Switzerland for different neighboring countries. The dataset has the following c
 * Nettoimport: Net electricity imports (Total imports - Total exports)
 
 The dataset can be downloaded here:
-https://opendata.swiss/de/dataset/energiedashboard-ch-tagliche-flusse-in-die-und-aus-der-schweiz-strom
+https://opendata.swiss/de/dataset/energiedashboard-ch-tagliche-flusse-in-die-und-aus-der-schweiz-strom1
 
 ## Your mission, should you choose to accept it:
 
