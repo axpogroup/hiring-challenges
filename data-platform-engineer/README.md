@@ -2,8 +2,8 @@
 
 ## Introduction
 
-Axpo has ambitions goals to become a data-driven company.
-To achieve this, we need to build a modern data platform that enable
+Axpo has ambitious goals to become a data-driven company.
+To achieve this, we need to build a modern data platform that enables
 data scientists, data engineers, and business users
 to access, analyze, and consume data in a secure and efficient way.
 
@@ -13,61 +13,98 @@ To do so, we need your help to design and implement a data platform.
 
 ### Initial position
 
-Start from scratch. Given is only the companies structure and culture.
+Axpo is building a centralized Azure Databricks-based platform with:
 
-Imagine Axpo as a company with many diverse teams, departments and even subsidiaries all over the world.
-Some of them are very advanced and may already have a data platform of some sort,
-while others are just getting started to collect and analyze data.
+* Terraform as the source of truth for infrastructure and core governance
 
-Technology wise, Axpo's new Dataplatform should be built on top of Azure Databricks.
+* GitHub Actions for CI/CD
 
+* Multiple business domains / subsidiaries
+
+Platform users include data scientists, engineers and analysts who need “safe playgrounds” and controlled promotion paths. 
+You can assume Azure core services are available (Storage, Key Vault, IoT Hub, Log Analytics, etc.).
 
 ### Rules
 
 * read the whole README.md carefully
-* don't spend more than 1 hour on each task
 * don't solve everything, focus on what you think is most important
 * be creative and pragmatic
-* be prepared to present your results and answer questions
-* no need to hand in the results before the interview
+* be prepared to present your results and answer (live, related) questions
 
+### Tasks overview & scoring
+
+All tasks are required.
+
+We evaluate tasks with the following weighting:
+- **Task 1 (Design): 40%**
+- **Task 2 (Terraform): 40%**
+- **Task 3 (IoT ingestion): 20%**
+
+Recommended time split (to match the weighting):
+- Task 1: ~60 minutes prep — present in 10 minutes
+- Task 2: ~60 minutes prep — present in 10 minutes
+- Task 3: ~30 minutes prep — present in 5 minutes
 
 ### Task 1: 👩‍🎨 Design a Data Platform
+Draft a high-level architecture for Axpo’s data platform on Azure Databricks.
 
-Time to get creative! There are many things to consider when designing a data platform
-and there are many ways to do it. We want to see how you would do it.
+**Must address (explicitly):**
 
-In max. 5 slides, please draft a very high-level architecture of your data platform design.
-Include some of your own thoughts like:
+**1. Environment strategy**
+* how do you separate platform engineering changes from data product changes? 
+* How do you handle dev/test/prod when customers of the platform (Data scientists/engineers/analysts) need dev/test too?
 
-* how can teams share data with each other?
-* how can you ingest data from on-premises sources?
-* who is responsible for what?
-* much more ... what do you think is important?
+**2. Data sharing model across teams/domains**
+* How do teams publish and consume “data products”?
+* How do you prevent “copy-paste data silos”?
 
-Be concise, you will present your solution in max. 5 minutes.
+**3. Responsibility split**
+* What does the platform team own vs what data product teams own?
 
-### Task 2: 🕵️‍♂️ It's all about the details
+**4. Security & governance at the right level**
+* Identity model, least privilege, separation of duties, data access patterns
+* How do we handle multi-region/multi-tenant requirements (high-level)?
 
-In Axpo many data are directly arriving from IoT Sensors. 
-Could you design a solution to ingest data from IoT sensors into a data platform? Which tools would you use and why?
-What are the most important aspects to consider? 
+**5. Operationalization**
+* Monitoring/alerting, cost controls, and incident basics (even if high-level)
+* Data contract approach (schema + quality expectations)
+
+> Keep it crisp: say 5 slides, 10 minutes.
+
+### Task 2: 👷 Implementation phase
+Implement a small Terraform design that onboards a new business domain into the platform.
+Assume the new domain is **"Human Resources"**.
+
+**Context**: Axpo onboards many business domains over time. Each domain must have clear ownership boundaries.
+We also want onboarding to be repeatable and maintainable as the number of domains grows.
+
+**Deliverable**: A small Terraform codebase (module(s) + example usage) that provisions the minimum resources needed to onboard a new domain.
+
+**Must demonstrate**
+- a clear separation between **platform-managed** resources and **domain-managed** resources
+- at least one of:
+  - Unity Catalog catalog/schema + grants
+  - external location + credential + grants
+- how you would support **multiple environments** (dev/test/prod) in code (structure/variables/workspaces/stacks)
+
+**Nice to have**
+- naming conventions and tagging strategy
+- a short README explaining:
+  - what the platform team needs to provide
+  - what the domain team needs to do
+  - how a second domain would be added
+
+> You don’t need everything runnable, but it should be clear, idiomatic, and scalable to many domains.
+
+### Task 3: 🕵️‍♂️ It's all about the details
+
+In Axpo many data are directly arriving from IoT Sensors. Could you design a solution to ingest data from IoT sensors into a data platform? Which tools would you use and why? What are the most important aspects to consider?
 
 Hint: Considering the amount of data it would be great to have a solution that scales well!
 
-Highlight only technical details you think are relevant and present your solution in 5 min.
+> Highlight only technical details you think are relevant and present your solution in 5 min.
 
-### Task 3: 👷 Implementation phase
-
-Pick a small part of your design from the first task and implement it in Terraform.
-```terraform plan``` against any free Azure subscription is enough to show us your skills.
-Not all parts of your code need to be runnable, but it should be clear what you want to achieve 
-and how you would structure your terraform code.
-
-Get your hands dirty and show us your code (no slides, max. 5 minutes).
-
-
-# THE END
+## THE END
 
 We're looking forward to your results and are excited to discuss them with you.
 
