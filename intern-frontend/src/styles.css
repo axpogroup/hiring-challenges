@@ -1,0 +1,18 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin: 2rem 0;
+  color: #2c3e50;
+}
