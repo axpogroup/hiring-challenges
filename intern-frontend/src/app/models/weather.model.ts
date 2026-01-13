@@ -17,3 +17,8 @@ export interface Weather {
   condition: any;
   humidity: any;
 }
+
+export interface Europe {
+  id: any;
+  weather: any;
+}

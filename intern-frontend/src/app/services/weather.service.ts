@@ -18,11 +18,10 @@ export class WeatherService {
    * 2. The API returns an array of Weather objects
    * 3. Return the observable from http.get()
    *
-   * Hint: Use this.http.get<Weather[]>(this.apiUrl)
+   * Hint: Use this.http.Method<Type>(url)
    */
   getWeather() {
     // TODO: Implement this method
-    // Example: return this.http.get<Weather[]>(this.apiUrl);
     throw new Error("Method not implemented - complete this in Task 1");
   }
 }

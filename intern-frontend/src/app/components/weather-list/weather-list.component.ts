@@ -1,4 +1,4 @@
-import { Component, signal, effect, inject } from "@angular/core";
+import { Component, signal, effect, inject, untracked } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { WeatherService } from "../../services/weather.service";
 import { Weather } from "../../models/weather.model";
@@ -30,8 +30,16 @@ export class WeatherListComponent {
    * Hint: Use untracked(() => {})
    */
   //  TODO: Service injection using modern inject() function
+  private weatherService = inject(WeatherService);
+
   // TODO: Create signals here
+  // weatherData
+
   // TODO: Implement data fetching logic here
+
+  _ = effect(() => {
+    untracked(() => {});
+  });
   // Hint:
   // 1. Set isLoading to true: this.isLoading.set(true)
   // 2. Call this.weatherService.getWeather().subscribe({ ... })
