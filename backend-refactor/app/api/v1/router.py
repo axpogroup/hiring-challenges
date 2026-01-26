@@ -5,4 +5,4 @@ router = APIRouter()
 
 router.include_router(assets.router, prefix="/assets", tags=["Assets"])
 
-router.include_router(assets.router, prefix="/measurements", tags=["Measurements"])
+router.include_router(measurements.router, prefix="/measurements", tags=["Measurements"])
