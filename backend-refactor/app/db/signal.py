@@ -6,4 +6,4 @@ from app.utils.file_handlers import load_json_file
 def load_signals() -> List[Dict[str, Any]]:
     """Load signals from JSON file."""
     settings = get_settings()
-    return load_json_file(settings._path)
+    return load_json_file(settings.signals_path)

@@ -7,7 +7,9 @@ class AppSettings(BaseSettings):
     app_name: str = "AssetAPI"
     api_version: str = "v1"
     debug_mode: bool = True
-    data_path: str = "data/signal.json"
+    assets_path: str = "data/assets.json"
+    signals_path: str = "data/signal.json"
+    measurements_path: str = "data/measurements.csv"
     
     class Config:
         env_file = ".env"
