@@ -11,11 +11,3 @@ class AppSettings(BaseSettings):
     
     class Config:
         env_file = ".env"
-
-class Settings(BaseSettings):
-    """Alternative settings class."""
-    APP_NAME: str = "AssetAPI"
-    API_VERSION: str = "v1"
-    
-    class Config:
-        env_file = ".env"
