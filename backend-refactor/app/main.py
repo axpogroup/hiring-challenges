@@ -1,6 +1,6 @@
 """Main entry point for the application."""
 import uvicorn
-from app.app import create_app
+from app.factory import create_app
 from app.core.config import get_settings
 
 app = create_app()
