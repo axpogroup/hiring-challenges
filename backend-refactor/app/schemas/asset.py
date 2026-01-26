@@ -1,11 +1,18 @@
 """Asset schema definitions."""
+from pydantic import BaseModel, Field, UUID4
 from typing import List
-from pydantic import BaseModel
+
+class SignalResponse(BaseModel):
+    """Schema for individual signal data."""
+    id: str = Field(..., description="The internal hardware ID")
+    global_id: UUID4 = Field(..., description="The unique UUID across all systems")
+    name: str
+    unit: str
 
 class AssetResponse(BaseModel):
     """Schema for asset API response."""
     asset_id: str
-    signals: List[dict]
+    signals: List[SignalResponse] = []
 
 class AssetListResponse(BaseModel):
     """Schema for list of assets."""
