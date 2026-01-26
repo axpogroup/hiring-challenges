@@ -1,8 +1,7 @@
 """Asset service layer."""
 from typing import List, Dict
-from db.asset_db import get_assets, fetch_assets
-from utils.asset_helper import format_asset_response, transform_asset
-from utils.helpers import validate_data
+from app.db.asset import get_assets, fetch_assets
+from app.utils.asset import format_asset_response, transform_asset
 
 class AssetService:
     """Service for managing assets."""

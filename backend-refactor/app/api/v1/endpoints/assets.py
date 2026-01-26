@@ -1,8 +1,8 @@
 """Assets endpoint (v1)."""
 from typing import List
 from fastapi import APIRouter, Depends, HTTPException
-from app.services.asset_service import AssetService
-from app.schemas.asset_schema import AssetResponse
+from app.services.asset import AssetService
+from app.schemas.asset import AssetResponse
 from app.utils.helpers import validate_data
 
 router = APIRouter()

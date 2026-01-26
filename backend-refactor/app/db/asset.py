@@ -1,7 +1,7 @@
 """Database operations for assets."""
 import json
 from typing import List, Dict, Optional
-from db.signal_db import load_signals, get_all_signals
+from app.db.signal import load_signals, get_all_signals
 
 def get_assets() -> List[Dict]:
     """Get all assets grouped by asset_id."""

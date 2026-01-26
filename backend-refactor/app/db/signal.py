@@ -1,7 +1,7 @@
 """Database operations for signals."""
 import json
 from typing import List, Dict, Optional
-from core.config import get_settings
+from app.core.config import get_settings
 
 def load_signals() -> List[Dict]:
     """Load signals from JSON file."""
