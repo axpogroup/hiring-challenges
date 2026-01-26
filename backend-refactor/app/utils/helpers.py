@@ -1,5 +1,5 @@
 """Helper utilities."""
-from typing import List, Dict, Any
+from typing import Dict, Any
 
 def validate_data(data: Any) -> bool:
     """Validate data is not None."""
