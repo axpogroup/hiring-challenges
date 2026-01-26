@@ -1,5 +1,5 @@
 """Utility helpers for assets."""
-from typing import List, Dict
+from typing import Dict
 
 def format_asset_response(asset_data: Dict) -> Dict:
     """Format asset data for response."""
@@ -7,10 +7,6 @@ def format_asset_response(asset_data: Dict) -> Dict:
         "asset_id": asset_data.get("asset_id"),
         "signals": asset_data.get("signals", [])
     }
-
-def FormatAssetResponse(data: Dict) -> Dict:
-    """PascalCase version."""
-    return format_asset_response(data)
 
 def transform_asset(asset: Dict) -> Dict:
     """Transform asset to API format."""
