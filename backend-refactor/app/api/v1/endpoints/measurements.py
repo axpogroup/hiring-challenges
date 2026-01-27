@@ -4,26 +4,37 @@ from typing import Any, List, Optional, Dict
 from datetime import datetime
 from app.services.measurement import MeasurementService
 from app.schemas.measurement import MeasurementResponse
-from app.utils.date_utils import parse_date, validate_date_range
 
 router = APIRouter()
 
-measurement_service = MeasurementService()
-
 @router.get("/", response_model=List[MeasurementResponse])
 async def get_measurements(
-    signalIds: str = Query(..., description="Comma-separated signal IDs"),
-    from_date: str = Query(..., alias="from", description="Start date (ISO format)"),
-    to_date: str = Query(..., alias="to", description="End date (ISO format)"),
+    signal_ids: str = Query(..., description="Comma-separated signal IDs"),
+    from_date: datetime = Query(
+        ...,
+        alias="from",
+        description="Start datetime (ISO 8601)",
+        example="2024-01-01T00:00:00"
+    ),
+    to_date: datetime = Query(
+        ...,
+        alias="to",
+        description="End datetime (ISO 8601)",
+        example="2024-01-02T00:00:00"
+    ),
     service: MeasurementService = Depends()
 ):
     """Get measurements for specified signals and date range."""
-    try:
-        signal_id_list = [sid.strip() for sid in signalIds.split(",")]
-        from_dt = parse_date(from_date)
-        to_dt = parse_date(to_date)
+    if from_date >= to_date:
+        raise HTTPException(
+            status_code=400,
+            detail="Invalid date range: 'from' must be before 'to'",
+        )
 
-        return service.get_measurements(signal_id_list, from_dt, to_dt)
+    try:
+        signal_id_list = [sid.strip() for sid in signal_ids.split(",")]
+
+        return service.get_measurements(signal_id_list, from_date, to_date)
 
     except ValueError as e:
         raise HTTPException(status_code=400, detail=f"Invalid date format: {str(e)}")
@@ -31,8 +42,19 @@ async def get_measurements(
 @router.get("/stats/{signal_id}", response_model=Any)
 async def get_signal_stats(
     signal_id: str,
-    from_date: str = Query(..., alias="from", description="Start date (ISO format)"),
-    to_date: str = Query(..., alias="to", description="End date (ISO format)")
+    from_date: datetime = Query(
+        ...,
+        alias="from",
+        description="Start datetime (ISO 8601)",
+        example="2024-01-01T00:00:00"
+    ),
+    to_date: datetime = Query(
+        ...,
+        alias="to",
+        description="End datetime (ISO 8601)",
+        example="2024-01-02T00:00:00"
+    ),
+    service: MeasurementService = Depends()
 ):
     """Calculate statistics for a signal over a date range.
     
@@ -44,14 +66,13 @@ async def get_signal_stats(
         - median: Median value
         - std_dev: Standard deviation
     """
+    if from_date >= to_date:
+        raise HTTPException(
+            status_code=400,
+            detail="Invalid date range: 'from' must be before 'to'",
+        )
+
     try:
-        from_dt = datetime.fromisoformat(from_date)
-        to_dt = datetime.fromisoformat(to_date)
-        
-        stats = measurement_service.calculate_signal_stats(signal_id, from_dt, to_dt)
-        return stats
+        return service.calculate_signal_stats(signal_id, from_date, to_date)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error calculating stats: {str(e)}")
-

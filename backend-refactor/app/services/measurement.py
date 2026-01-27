@@ -4,16 +4,17 @@ from datetime import datetime
 from typing import List, Dict
 from app.db.signal import load_signals
 from app.db.measurement import load_measurements_in_range
-from app.utils.date_utils import validate_date_range
     
 class MeasurementService:
     """Service for managing measurements."""
     
-    def get_measurements(self, signal_ids: List[str], from_date: datetime, to_date: datetime) -> List[Dict]:
+    def get_measurements(
+        self,
+        signal_ids: List[str],
+        from_date: datetime,
+        to_date: datetime
+    ) -> List[Dict]:
         """Get measurements for signals in date range."""
-        if not validate_date_range(from_date, to_date):
-            raise ValueError("Invalid date range: 'from' must be before 'to'")
-        
         measurements = load_measurements_in_range(signal_ids, from_date, to_date)
         # Load signals to get units from signals
         signals = load_signals()
@@ -27,12 +28,14 @@ class MeasurementService:
             
         return measurements
 
-    def calculate_signal_stats(self, signal_id: str, from_date: datetime, to_date: datetime) -> Dict:
+    def calculate_signal_stats(
+        self,
+        signal_id: str,
+        from_date: datetime,
+        to_date: datetime
+    ) -> Dict:
         """Calculate statistics for a signal over a date range."""
-        if not validate_date_range(from_date, to_date):
-            raise ValueError("Invalid date range")
-        
-        measurements = get_measurements([signal_id], from_date, to_date)
+        measurements = load_measurements_in_range([signal_id], from_date, to_date)
         
         if not measurements:
             return {
