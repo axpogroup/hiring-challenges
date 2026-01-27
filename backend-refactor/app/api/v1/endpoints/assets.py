@@ -1,4 +1,4 @@
-"""Assets endpoint (v1)."""
+"""Assets endpoints (v1)"""
 from typing import List
 from fastapi import APIRouter, Depends, HTTPException
 from app.services.asset import AssetService
@@ -10,12 +10,4 @@ router = APIRouter()
 @router.get("/", response_model=List[AssetResponse])
 async def get_assets(service: AssetService = Depends()):
     """Get all assets with their signals."""
-    try:
-        assets = service.get_all_assets()
-        
-        if not validate_data(assets):
-            raise HTTPException(status_code=404, detail="No assets found")
-        
-        return assets
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    return service.get_all_assets()
