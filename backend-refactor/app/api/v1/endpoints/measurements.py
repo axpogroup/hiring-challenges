@@ -3,7 +3,7 @@ from fastapi import APIRouter, HTTPException, Query, Depends
 from typing import Any, List, Optional, Dict
 from datetime import datetime
 from app.services.measurement import MeasurementService
-from app.schemas.measurement import MeasurementResponse
+from app.schemas.measurement import MeasurementResponse, MeasurementStatsResponse
 
 router = APIRouter()
 
@@ -14,13 +14,13 @@ async def get_measurements(
         ...,
         alias="from",
         description="Start datetime (ISO 8601)",
-        example="2024-01-01T00:00:00"
+        examples="2024-01-01T00:00:00"
     ),
     to_date: datetime = Query(
         ...,
         alias="to",
         description="End datetime (ISO 8601)",
-        example="2024-01-02T00:00:00"
+        examples="2024-01-02T00:00:00"
     ),
     service: MeasurementService = Depends()
 ):
@@ -39,20 +39,20 @@ async def get_measurements(
     except ValueError as e:
         raise HTTPException(status_code=400, detail=f"Invalid date format: {str(e)}")
 
-@router.get("/stats/{signal_id}", response_model=Any)
+@router.get("/stats/{signal_id}", response_model=MeasurementStatsResponse)
 async def get_signal_stats(
     signal_id: str,
     from_date: datetime = Query(
         ...,
         alias="from",
         description="Start datetime (ISO 8601)",
-        example="2024-01-01T00:00:00"
+        examples="2024-01-01T00:00:00"
     ),
     to_date: datetime = Query(
         ...,
         alias="to",
         description="End datetime (ISO 8601)",
-        example="2024-01-02T00:00:00"
+        examples="2024-01-02T00:00:00"
     ),
     service: MeasurementService = Depends()
 ):
