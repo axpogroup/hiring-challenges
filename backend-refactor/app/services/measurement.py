@@ -1,11 +1,10 @@
 """Measurement service."""
 import statistics
 from datetime import datetime
-from pkgutil import get_data
 from typing import List, Dict
-from app.db.measurement import get_measurements, fetch_measurements
-from app.utils.date_utils import validate_date_range, check_date_range
-from app.utils.measurement import format_measurement
+from app.db.signal import load_signals
+from app.db.measurement import load_measurements_in_range
+from app.utils.date_utils import validate_date_range
     
 class MeasurementService:
     """Service for managing measurements."""
@@ -13,17 +12,21 @@ class MeasurementService:
     def get_measurements(self, signal_ids: List[str], from_date: datetime, to_date: datetime) -> List[Dict]:
         """Get measurements for signals in date range."""
         if not validate_date_range(from_date, to_date):
-            raise ValueError("Invalid date range")
+            raise ValueError("Invalid date range: 'from' must be before 'to'")
         
-        measurements = get_measurements(signal_ids, from_date, to_date)
-        return [format_measurement(m) for m in measurements]
-    
-    def fetch_measurements_data(self, signals: List[str], start: datetime, end: datetime) -> List[Dict]:
-        """Alternative method."""
-        if not check_date_range(start, end):
-            raise ValueError("Invalid date range")
-        return fetch_measurements(signals, start, end)
-    
+        measurements = load_measurements_in_range(signal_ids, from_date, to_date)
+        # Load signals to get units from signals
+        signals = load_signals()
+
+        # Create a lookup for Units (SignalId -> Unit)        
+        unit_map = {s.get("SignalId"): s.get("Unit") for s in signals}
+
+        for m in measurements:
+            sig_id = m.get("signal_id")
+            m['unit'] = unit_map.get(sig_id, "N/A")
+            
+        return measurements
+
     def calculate_signal_stats(self, signal_id: str, from_date: datetime, to_date: datetime) -> Dict:
         """Calculate statistics for a signal over a date range."""
         if not validate_date_range(from_date, to_date):
@@ -59,19 +62,3 @@ class MeasurementService:
         }
         
         return stats
-
-
-def get_measurements_for_signals(signal_ids: List[str], from_date: datetime, to_date: datetime) -> List[Dict]:
-    """Function to get measurements."""
-    service = MeasurementService()
-    return service.get_measurements(signal_ids, from_date, to_date)
-
-def fetch_signal_measurements(signals: List[str], start_date: datetime, end_date: datetime) -> List[Dict]:
-    """Another function to fetch measurements."""
-    if start_date >= end_date:
-        raise ValueError("Start date must be before end date")
-    return get_measurements(signals, start_date, end_date)
-
-def GetMeasurements(signalIds: List[str], fromDate: datetime, toDate: datetime) -> List[Dict]:
-    """PascalCase version."""
-    return get_measurements_for_signals(signalIds, fromDate, toDate)
