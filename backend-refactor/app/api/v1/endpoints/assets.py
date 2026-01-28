@@ -1,4 +1,4 @@
-"""Assets endpoints (v1)"""
+"""Assets endpoints (v1)."""
 from typing import List
 from fastapi import APIRouter, Depends, HTTPException
 from app.services.asset import AssetService

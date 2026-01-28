@@ -1,4 +1,4 @@
-"""Measurements endpoints (v1)"""
+"""Measurements endpoints (v1)."""
 from fastapi import APIRouter, HTTPException, Query, Depends
 from typing import Any, List, Optional, Dict
 from datetime import datetime

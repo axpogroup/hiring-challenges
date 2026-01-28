@@ -1,3 +1,4 @@
+"""Helper to read data from files."""
 import csv
 import json
 import logging
