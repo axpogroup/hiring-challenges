@@ -1,7 +1,8 @@
 """Measurements endpoints (v1)."""
-from fastapi import APIRouter, HTTPException, Query, Depends
-from typing import Any, List, Optional, Dict
 from datetime import datetime
+from typing import List
+from fastapi import APIRouter, HTTPException, Query, Depends
+
 from app.services.measurement import MeasurementService
 from app.schemas.measurement import MeasurementResponse, MeasurementStatsResponse
 
@@ -14,13 +15,23 @@ async def get_measurements(
         ...,
         alias="from",
         description="Start datetime (ISO 8601)",
-        examples="2024-01-01T00:00:00"
+        openapi_examples={
+            "default": {
+                "summary": "Start of range",
+                "value": "2024-01-01T00:00:00",
+            }
+        }
     ),
     to_date: datetime = Query(
         ...,
         alias="to",
         description="End datetime (ISO 8601)",
-        examples="2024-01-02T00:00:00"
+        openapi_examples={
+            "default": {
+                "summary": "End of range",
+                "value": "2024-01-02T00:00:00",
+            }
+        }
     ),
     service: MeasurementService = Depends()
 ):
@@ -46,13 +57,23 @@ async def get_signal_stats(
         ...,
         alias="from",
         description="Start datetime (ISO 8601)",
-        examples="2024-01-01T00:00:00"
+        openapi_examples={
+            "default": {
+                "summary": "Start of range",
+                "value": "2024-01-01T00:00:00",
+            }
+        }
     ),
     to_date: datetime = Query(
         ...,
         alias="to",
         description="End datetime (ISO 8601)",
-        examples="2024-01-02T00:00:00"
+        openapi_examples={
+            "default": {
+                "summary": "End of range",
+                "value": "2024-01-02T00:00:00",
+            }
+        }
     ),
     service: MeasurementService = Depends()
 ):
