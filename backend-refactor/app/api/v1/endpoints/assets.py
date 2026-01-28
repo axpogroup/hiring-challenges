@@ -1,8 +1,9 @@
 """Assets endpoints (v1)."""
 from typing import List
 from fastapi import APIRouter, Depends, HTTPException
-from app.services.asset import AssetService
+
 from app.schemas.asset import AssetResponse
+from app.services.asset import AssetService
 
 router = APIRouter()
 

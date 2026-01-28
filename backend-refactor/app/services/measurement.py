@@ -1,10 +1,14 @@
 """Measurement service."""
+import logging
 import statistics
 from datetime import datetime
 from typing import List, Dict
+
 from app.db.signal import load_signals
 from app.db.measurement import load_measurements_in_range
-    
+
+logger = logging.getLogger(__name__)
+
 class MeasurementService:
     """Service for managing measurements."""
     
@@ -15,6 +19,15 @@ class MeasurementService:
         to_date: datetime
     ) -> List[Dict]:
         """Get measurements for signals in date range."""
+        logger.debug(
+            "Fetching measurements",
+            extra={
+                "signal_ids": signal_ids,
+                "from": from_date.isoformat(),
+                "to": to_date.isoformat(),
+            },
+        )
+
         measurements = load_measurements_in_range(signal_ids, from_date, to_date)
         # Load signals to get units from signals
         signals = load_signals()
@@ -25,7 +38,12 @@ class MeasurementService:
         for m in measurements:
             sig_id = m.get("signal_id")
             m['unit'] = unit_map.get(sig_id, "N/A")
-            
+
+        logger.info(
+            "Measurements loaded",
+            extra={"count": len(measurements)},
+        )
+
         return measurements
 
     def calculate_signal_stats(
@@ -35,6 +53,15 @@ class MeasurementService:
         to_date: datetime
     ) -> Dict:
         """Calculate statistics for a signal over a date range."""
+        logger.debug(
+            "Calculating signal stats",
+            extra={
+                "signal_id": signal_id,
+                "from": from_date.isoformat(),
+                "to": to_date.isoformat(),
+            },
+        )
+
         measurements = load_measurements_in_range([signal_id], from_date, to_date)
         
         if not measurements:
@@ -63,5 +90,10 @@ class MeasurementService:
             "median": round(statistics.median(values), 2),
             "std_dev": round(statistics.stdev(values), 2) if len(values) > 1 else 0.0
         }
-        
+
+        logger.info(
+            "Signal stats calculated",
+            extra={"signal_id": signal_id, "count": stats["count"]},
+        )
+
         return stats

@@ -1,7 +1,7 @@
 """Measurement schemas."""
 from datetime import datetime
-from typing import List, Optional
 from pydantic import BaseModel
+from typing import List, Optional
 
 class MeasurementRequest(BaseModel):
     """Request schema for measurements endpoint."""
