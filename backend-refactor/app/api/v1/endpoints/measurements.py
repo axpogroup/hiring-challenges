@@ -8,7 +8,7 @@ from app.schemas.measurement import MeasurementResponse, MeasurementStatsRespons
 
 router = APIRouter()
 
-@router.get("/", response_model=List[MeasurementResponse])
+@router.get("", response_model=List[MeasurementResponse])
 async def get_measurements(
     signal_ids: str = Query(..., description="Comma-separated signal IDs"),
     from_date: datetime = Query(
