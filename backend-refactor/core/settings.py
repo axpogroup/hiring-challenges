@@ -1,6 +1,6 @@
 """Application settings and environment variables."""
 import os
-from pydantic_settings import BaseSettings
+from pydantic import BaseSettings
 
 class AppSettings(BaseSettings):
     """Application settings loaded from environment."""

@@ -4,5 +4,7 @@ Initial Assessment:
 The code quality is low, the previous developer was copying/pasting from tutorials.
 
 Todo: 
-- Productionalise this application (This is purposely vague, implement what you think is necessary for this small application to work on prod)
-- Spend around 4-6 hours on this, document how you spent your time.
+- Productionalise this application (This is purposely vague, implement what you think is necessary for this small application to easily maintainable by a dev team)
+- No need to add infrastructure
+- Dont worry about breaking changes, bugs are bugs, not features
+- Spend around 4-6 hours on this, document how you spent your time
