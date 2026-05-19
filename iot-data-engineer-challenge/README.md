@@ -3,7 +3,7 @@
 ## Intro
 
 Axpo's is building up BESS (Battery Energy Storage Systems) all over Europe. Each system can have a different setup, depending on country specific regulations, available suppliers or cost restrictions. 
-Our goal is to develop a secure, reliable and scalable architecture to ingest the raw IoT data into our cloud platform and to transform the raw data into usable information for the business.
+Our goal is to develop a secure, reliable and scalable architecture to ingest the raw IoT data into our cloud platform and to transform it into usable information for the business.
 ## Your mission, should you choose to accept it:
 
 ### Initial position
@@ -16,7 +16,7 @@ Our goal is to develop a secure, reliable and scalable architecture to ingest th
 * **Please invest no more than 2 to 3 hours.** If you cannot complete the task
   in this time frame, document where you got stuck, so we can use this as a
   basis for discussion for your next interview.
-* You're free to choose the tech stack you feel fitting.
+* You're free to choose the tech stack you feel fitting. We recommend you to use the tech you already worked with!
 * We don't expect to see code or a detailed solution, but rather a high level architecture and concept.
 
 ### Tasks overview & scoring
