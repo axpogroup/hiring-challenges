@@ -1,0 +1,74 @@
+/**
+ * TODO: Task 3 - Add styling for the weather cards
+ * 
+ * Instructions:
+ * 1. Style .weather-grid to display cards in a grid or flex layout
+ * 2. Style .weather-card to look like a card (border, padding, shadow, etc.)
+ * 3. Make it responsive if you have time
+ * 
+ * You can use the existing classes or create new ones
+ */
+
+.weather-container {
+  padding: 20px;
+}
+
+.instructions {
+  text-align: center;
+  color: #999;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.1rem;
+}
+
+.loading {
+  color: #3498db;
+}
+
+.error {
+  color: #e74c3c;
+  background-color: #fadbd8;
+  border-radius: 5px;
+  margin: 1rem 0;
+}
+
+/* TODO: Add styles for .weather-grid */
+.weather-grid {
+  /* Your styling here */
+}
+
+/* TODO: Add styles for .weather-card */
+.weather-card {
+  /* Your styling here */
+  /* Suggestion: border, border-radius, padding, box-shadow, background-color */
+}
+
+/* Weather card content - feel free to customize */
+.city-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.temperature {
+  font-size: 2rem;
+  color: #3498db;
+  margin: 0.5rem 0;
+}
+
+.condition {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin: 0.5rem 0;
+}
+
+.humidity {
+  font-size: 0.9rem;
+  color: #95a5a6;
+}
