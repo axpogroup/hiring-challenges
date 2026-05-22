@@ -1,5 +1,5 @@
 fastapi==0.88.0
 uvicorn[standard]==0.20.0
-pydantic==1.10.7
+pydantic==1.10.13
 python-dateutil==2.8.2
 jinja2==2.11.3
