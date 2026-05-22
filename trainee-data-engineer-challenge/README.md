@@ -10,12 +10,12 @@ This exercise will test your data engineering, analysis, and communication skill
 
 ## Objective
 
-The goal of this challenge is to analyze hourly electricity flow data, aggregate it into daily totals,
+The goal of this challenge is to analyze daily electricity flow data, aggregate it into daily totals,
 and generate insights that can help optimize Swit-zerland's electricity imports and exports.
 
 ## Dataset Description
 
-You will be provided with a dataset that contains hourly electricity flows into and out of
+You will be provided with a dataset that contains daily electricity flows into and out of
 Switzerland for different neighboring countries. The dataset has the following columns:
 
 * Datetime: Timestamp of the record (including time zone offset)
@@ -30,7 +30,7 @@ Switzerland for different neighboring countries. The dataset has the following c
 * Nettoimport: Net electricity imports (Total imports - Total exports)
 
 The dataset can be downloaded here:
-https://opendata.swiss/de/dataset/energiedashboard-ch-tagliche-flusse-in-die-und-aus-der-schweiz-strom1
+https://opendata.swiss/de/dataset/energiedashboard-ch-tagliche-flusse-in-die-und-aus-der-schweiz-strom
 
 ## Your mission, should you choose to accept it:
 
